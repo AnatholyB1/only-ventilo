@@ -1,0 +1,152 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  background: radial-gradient(circle at 50% 30%, #2a3947 0%, #0f1820 70%);
+  color: #e6edf3;
+  overflow: hidden;
+}
+
+main {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hint {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: #8aa0b3;
+  user-select: none;
+}
+
+.fan {
+  position: relative;
+  width: 360px;
+  height: 460px;
+  cursor: pointer;
+}
+
+/* Base & stand */
+.base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 28px;
+  background: linear-gradient(180deg, #4a5764 0%, #2c3540 100%);
+  border-radius: 50% / 60%;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.stand {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 160px;
+  background: linear-gradient(90deg, #2c3540 0%, #5a6877 50%, #2c3540 100%);
+  border-radius: 4px;
+}
+
+/* Cage */
+.cage {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 28, 36, 0.55) 0%, rgba(20, 28, 36, 0.2) 70%);
+  border: 4px solid #5a6877;
+  box-shadow:
+    inset 0 0 30px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 12px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.cage-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1.5px solid rgba(180, 195, 210, 0.4);
+  transform: translate(-50%, -50%);
+}
+.cage-ring-outer { width: 88%; height: 88%; }
+.cage-ring-mid   { width: 60%; height: 60%; }
+.cage-ring-inner { width: 32%; height: 32%; }
+
+.cage-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 1.5px;
+  background: rgba(180, 195, 210, 0.4);
+  transform-origin: 0 0;
+}
+.cage-bar-1 { transform: translate(-50%, 0) rotate(0deg); }
+.cage-bar-2 { transform: translate(-50%, 0) rotate(30deg); }
+.cage-bar-3 { transform: translate(-50%, 0) rotate(60deg); }
+.cage-bar-4 { transform: translate(-50%, 0) rotate(90deg); }
+.cage-bar-5 { transform: translate(-50%, 0) rotate(120deg); }
+.cage-bar-6 { transform: translate(-50%, 0) rotate(150deg); }
+
+/* Blades */
+.blades {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 240px;
+  animation: spin 0.35s linear infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.fan:hover .blades {
+  animation-play-state: paused;
+}
+
+.blade {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 60px;
+  background: linear-gradient(135deg, #d8e1ea 0%, #8ea0b2 60%, #5a6877 100%);
+  border-radius: 50% 50% 8px 50%;
+  transform-origin: 0 50%;
+  box-shadow: inset -4px -2px 6px rgba(0, 0, 0, 0.25);
+}
+.blade:nth-child(1) { transform: rotate(0deg); }
+.blade:nth-child(2) { transform: rotate(90deg); }
+.blade:nth-child(3) { transform: rotate(180deg); }
+.blade:nth-child(4) { transform: rotate(270deg); }
+
+.hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(circle at 35% 35%, #c0cdd8 0%, #4a5764 80%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes spin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
+}

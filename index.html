@@ -3,11 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>only-ventilo</title>
+  <title>OnlyVentilo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="OnlyVentilo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M9 8.5v7l6-3.5z" fill="#fff"/></svg>
+      </span>
+      <span class="logo-text">Only<span class="logo-text-accent">Ventilo</span></span>
+    </a>
+    <nav class="nav">
+      <a href="#" class="nav-link">Explorer</a>
+      <a href="#" class="nav-link">Tarifs</a>
+      <a class="btn btn-ghost" href="#">Connexion</a>
+      <a class="btn btn-primary" href="#">S'abonner</a>
+    </nav>
+  </header>
+
   <main>
+    <div class="hero">
+      <span class="badge">● En ligne</span>
+      <h1>Only<span class="accent">Ventilo</span></h1>
+      <p class="tagline">Le seul ventilateur exclusif. Survole pour qu'il s'arrête.</p>
+    </div>
+
     <div class="fan" aria-label="Ventilateur (passez la souris pour arrêter)">
       <div class="cage">
         <div class="cage-ring cage-ring-outer"></div>
@@ -31,6 +55,11 @@
       <div class="base"></div>
     </div>
     <p class="hint">survole le ventilo pour l'arrêter</p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary btn-lg" href="#">S'abonner — 9,99€/mois</a>
+      <a class="btn btn-ghost btn-lg" href="#">Tip 💸</a>
+    </div>
   </main>
 </body>
 </html>

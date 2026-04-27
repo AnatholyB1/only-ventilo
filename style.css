@@ -120,7 +120,7 @@ main {
 
 .blade {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 30px);
   left: 50%;
   width: 110px;
   height: 60px;

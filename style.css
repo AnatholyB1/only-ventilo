@@ -283,6 +283,24 @@ main {
   to   { transform: translateX(-50%) rotate(360deg); }
 }
 
+/* Emoji projection */
+.emoji-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+.foot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  user-select: none;
+  will-change: transform;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
 @media (max-width: 600px) {
   .topbar { padding: 12px 16px; }
   .nav-link, .btn-ghost { display: none; }
